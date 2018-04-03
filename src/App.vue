@@ -1,13 +1,23 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/logo.png" @click="sayHi">
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    sayHi () {
+      console.log('hi')
+    }
+  },
+  data () {
+    return {
+      msg: 123
+    }
+  }
 }
 </script>
 
