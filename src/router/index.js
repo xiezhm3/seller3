@@ -3,7 +3,11 @@ import Router from 'vue-router';
 
 Vue.use(Router);
 
-const routes = [];
+const routes = [{
+  path: '/',
+  name: '',
+  component: null
+}];
 
 export default new Router({
   linkActiveClass: 'active',

@@ -1,20 +1,24 @@
 <template>
   <div id="app">
+    <Header></Header>
     <router-view/>
   </div>
 </template>
 
 <script>
+  import Header from './components/header/header';
+
   export default {
     name: 'App',
-    methods: {
-    },
+    methods: {},
     data () {
-      return {
-      };
+      return {};
+    },
+    components: {
+      Header
     }
   };
 </script>
 
-<style scoped>
+<style scoped lang="stylus">
 </style>
