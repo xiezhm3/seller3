@@ -1,6 +1,6 @@
 <template>
   <div class="v-header">
-    <h1>hello world</h1>
+    <p>hello world</p>
   </div>
 </template>
 
