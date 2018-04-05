@@ -1,6 +1,6 @@
 <template>
   <div id="v-app">
-    <Header></Header>
+    <Header :seller="seller"></Header>
     <div class="v-tab border-1px">
       <div class="v-tab-item">
         <router-link to="/goods">Goods</router-link>
@@ -16,14 +16,21 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   import Header from 'components/header/header';
 
   export default {
     name: 'App',
     methods: {},
     data () {
-      return {};
+      return {
+        seller: {}
+      };
+    },
+    created() {
+      this.$http.get('/api/seller').then((res) => {
+        this.seller = res.data.data;
+      });
     },
     components: {
       Header
