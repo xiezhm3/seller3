@@ -38,7 +38,8 @@
 </script>
 
 <style scoped lang="stylus">
-@import "../../common/stylus/mixin.styl";
+  @import "../../common/stylus/mixin.styl";
+
   .v-header
     color #fff
     background black
@@ -48,7 +49,7 @@
       .v-avatar, .v-content
         display inline-block
         font-size 14px
-        .v-content
+      .v-content
         margin-left 16px
         .v-title
           margin 2px 0 8px 0
@@ -56,7 +57,13 @@
             width 30px
             height 18px
             display inline-block
+            vertical-align top
             bg-image("./resource/brand")
             background-size 30px 18px
             background-repeat no-repeat
+          .v-name
+            margin-left 6px
+            font-size 16px
+            line-height 18px
+            font-weight bold
 </style>
