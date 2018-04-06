@@ -6,8 +6,8 @@
       </div>
       <div class="v-content">
         <div class="v-title">
-          <span class="brand"></span>
-          <span class="name">{{seller.name}}</span>
+          <span class="v-brand"></span>
+          <span class="v-name">{{seller.name}}</span>
         </div>
         <div class="v-description">
           {{seller.description}}/{{seller.deliveryTime}} minutes arrived
@@ -38,6 +38,7 @@
 </script>
 
 <style scoped lang="stylus">
+@import "../../common/stylus/mixin.styl";
   .v-header
     color #fff
     background black
@@ -47,13 +48,15 @@
       .v-avatar, .v-content
         display inline-block
         font-size 14px
-      .v-content
+        .v-content
         margin-left 16px
         .v-title
           margin 2px 0 8px 0
-          .brand
+          .v-brand
             width 30px
             height 18px
             display inline-block
-            background null
+            bg-image("./resource/brand")
+            background-size 30px 18px
+            background-repeat no-repeat
 </style>
