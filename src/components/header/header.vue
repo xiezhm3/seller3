@@ -39,10 +39,21 @@
 
 <style scoped lang="stylus">
   .v-header
-    color: #fff;
-    background: black;
+    color #fff
+    background black
     .v-content-wrapper
-      padding: 24px 12px 18px 24px
+      padding 24px 12px 18px 24px
+      font-size: 0
       .v-avatar, .v-content
-        display: inline-block;
+        display inline-block
+        font-size 14px
+      .v-content
+        margin-left 16px
+        .v-title
+          margin 2px 0 8px 0
+          .brand
+            width 30px
+            height 18px
+            display inline-block
+            background null
 </style>
