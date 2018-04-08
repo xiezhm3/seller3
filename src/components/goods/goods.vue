@@ -1,7 +1,9 @@
 <template>
-  <div class="v-goods">
+  <transition class="slide">
+    <div class="v-goods">
     <span>Goods Page</span>
   </div>
+  </transition>
 </template>
 
 <script>

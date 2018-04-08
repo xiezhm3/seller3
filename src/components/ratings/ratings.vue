@@ -1,7 +1,9 @@
 <template>
-  <div class="v-ratings">
+  <transition class="fade">
+    <div class="v-ratings">
     <span>Ratings Page</span>
   </div>
+  </transition>
 </template>
 
 <script>

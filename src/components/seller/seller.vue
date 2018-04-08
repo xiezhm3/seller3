@@ -1,7 +1,9 @@
 <template>
-  <div class="v-seller">
+  <transition class="fade">
+    <div class="v-seller">
     <span>Seller Page</span>
   </div>
+  </transition>
 </template>
 
 <script>
