@@ -88,7 +88,7 @@
             margin-left 4px
             background-size 12px 12px
             background-repeat no-repeat
-            &.decrease
+            &.decrease //TODO
               bg-image("./resource/decrease_1")
             &.discount
               bg-image("./resource/discount_1")
