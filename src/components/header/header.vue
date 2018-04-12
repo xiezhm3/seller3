@@ -26,6 +26,9 @@
       <span class="v-bulletin-title"></span><span class="v-bulletin-text">{{seller.bulletin}}</span>
       <i class="icon-keyboard_arrow_right"></i>
     </div>
+    <div class="v-background">
+    <img :src="seller.avatar" width="100%" height="100%">
+  </div>
   </div>
 </template>
 
@@ -50,7 +53,8 @@
 
   .v-header
     color #fff
-    background #999999
+    position relative
+    background rgba(7, 17, 27, 0.5)
     .v-content-wrapper
       padding 24px 12px 18px 24px
       position relative
@@ -150,4 +154,12 @@
         top 8px
         right 12px
         font-size 10px
+    .v-background
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      z-index -1
+      filter blur(10px)
 </style>
