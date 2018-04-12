@@ -22,7 +22,10 @@
         <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
-    <div class="v-bulletin-wrapper"></div>
+    <div class="v-bulletin-wrapper">
+      <span class="v-bulletin-title"></span><span class="v-bulletin-text">{{seller.bulletin}}</span>
+      <i class="icon-keyboard_arrow_right"></i>
+    </div>
   </div>
 </template>
 
@@ -118,5 +121,33 @@
           margin-left 2px
           font-size 10px
           line-height 24px
-
+    .v-bulletin-wrapper
+      position relative
+      height 28px
+      line-height 28px
+      // font-size 0
+      padding: 0 22px 0 12px
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+      background rgba(7, 17, 27, 0.2)
+      .v-bulletin-title
+        display inline-block
+        vertical-align top
+        margin-top 8px
+        width 22px
+        height 12px
+        bg-image("./resource/bulletin")
+        background-size 22px 12px
+        background-repeat no-repeat
+      .v-bulletin-text
+        vertical-align top
+        font-size 10px
+        font-weight 200
+        margin 0 4px
+      .icon-keyboard_arrow_right
+        position absolute
+        top 8px
+        right 12px
+        font-size 10px
 </style>
