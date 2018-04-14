@@ -1,5 +1,5 @@
 <template>
-  <transition class="slide">
+  <transition class="fade">
     <div class="v-goods">
     <span>Goods Page</span>
   </div>

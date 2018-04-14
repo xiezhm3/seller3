@@ -17,22 +17,28 @@
           <span class="v-text">{{seller.supports[1].description}}</span>
         </div>
       </div>
-      <div v-if="seller.supports" class="v-support-count">
+      <div v-if="seller.supports" class="v-support-count" @click="showDatail">
         <span class="v-count">{{ seller.supports.length }}</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
-    <div class="v-bulletin-wrapper">
+    <div class="v-bulletin-wrapper" @click="showDatail">
       <span class="v-bulletin-title"></span><span class="v-bulletin-text">{{seller.bulletin}}</span>
       <i class="icon-keyboard_arrow_right"></i>
     </div>
     <div class="v-background">
-    <img :src="seller.avatar" width="100%" height="100%">
-  </div>
+      <img :src="seller.avatar" width="100%" height="100%">
+    </div>
+    <div v-show="detailShow" class="v-detail">
+    <div class="v-detail-wrapper clearfix">
+      <div class="v-detail-main"></div>
+    </div>
+    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+// import Detail from './detail';
   export default {
     name: 'Header',
     props: {
@@ -41,10 +47,22 @@
         required: true
       }
     },
+    data() {
+      return {
+        detailShow: false
+      };
+    },
     created() {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
     },
-    methods: {}
+    methods: {
+      showDatail() {
+        this.detailShow = true;
+      }
+    },
+    components: {
+      // Detail
+    }
   };
 </script>
 
@@ -53,6 +71,7 @@
 
   .v-header
     color #fff
+    overflow hidden
     position relative
     background rgba(7, 17, 27, 0.5)
     .v-content-wrapper
@@ -162,4 +181,13 @@
       height 100%
       z-index -1
       filter blur(10px)
+    .v-detail
+      position fixed
+      z-index 100
+      top 0
+      left 0
+      width 100%
+      height 100%
+      overflow auto
+      background rgba(7, 17, 27, 0.8)
 </style>
