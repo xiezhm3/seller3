@@ -43,7 +43,6 @@
 </template>
 
 <script type="text/ecmascript-6">
-// import Detail from './detail';
   export default {
     name: 'Header',
     props: {
