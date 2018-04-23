@@ -43,6 +43,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+import Star from 'components/star/star';
+
   export default {
     name: 'Header',
     props: {
@@ -66,11 +68,12 @@
     },
     components: {
       // Detail
+      Star
     }
   };
 </script>
 
-<style scoped lang="stylus">
+<style scoped lang="stylus" type="stylesheet/stylus">
   @import "../../common/stylus/mixin.styl";
 
   .v-header
