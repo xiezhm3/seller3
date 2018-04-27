@@ -1,4 +1,4 @@
-// https://eslint.org/docs/user-guide/configuring
+// http://eslint.org/docs/user-guide/configuring
 
 module.exports = {
   root: true,
@@ -6,7 +6,7 @@ module.exports = {
     parser: 'babel-eslint'
   },
   env: {
-    browser: true,
+    browser: true
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
@@ -25,9 +25,15 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'indent': 0,
-    'semi': ['error', 'always'],
-    'no-tabs': 0,
-    'space-before-function-paren': 0
+    "quotes": 0,
+    "no-var": "error",
+    "semi": ["error", "always"],
+    "indent": 0,
+    // "no-extra-semi": "error",
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "never"
+    }]
   }
-}
+};
