@@ -30,19 +30,19 @@ export default {
           let score = Math.floor(this.score * 2) / 2;
           let hasDecimal = score % 1 !== 0;
           let interger = Math.floor(score);
-          for(let i = 0; i < interger; i++) {
+          for (let i = 0; i < interger; i++) {
               result.push(CLS_ON);
           }
-          if(hasDecimal) {
+          if (hasDecimal) {
               result.push(CLS_HALF);
           }
-          while(result.length < LENGTH) {
+          while (result.length < LENGTH) {
               result.push(CLS_OFF);
           }
           return result;
       }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped rel="stylesheet/stylus">
