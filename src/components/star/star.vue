@@ -94,4 +94,3 @@ import "../../../common/stylus/mixin.styl"
       &.off
         bg-image("star24_off")
 </style>
-
