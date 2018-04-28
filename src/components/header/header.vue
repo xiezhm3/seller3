@@ -33,6 +33,9 @@
       <div class="v-detail-wrapper clearfix">
         <div class="v-detail-main">
           <h1 class="v-name">{{seller.name}}</h1>
+          <div class="v-star-wrapper">
+            <Star :size='48' :score='seller.score'></Star>
+          </div>
         </div>
       </div>
       <div class="v-detail-close">
@@ -259,6 +262,12 @@ export default {
           text-align: center;
           font-size: 16px;
           font-weight: 700;
+        }
+
+        .v-star-wrapper {
+          margin-top: 18px;
+          padding: 2px 0;
+          text-align: center;
         }
       }
     }
