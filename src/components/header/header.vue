@@ -38,12 +38,26 @@
           </div>
           <div class="v-title">
             <div class="v-line"></div>
-            <div class="v-text">Discount Info</div>
+            <div class="v-text">优惠信息</div>
             <div class="v-line"></div>
           </div>
+          <ul v-if="seller.supports"  class="v-supports">
+            <li class="support-item" v-for="(item, index) in seller.supports" :key="index">
+              <span class="icon" :class="classMap[seller.supports[index].type]"></span>
+              <span class="text">{{seller.supports[index].description}}</span>
+            </li>
+          </ul>
+          <div class="v-title">
+            <div class="v-line"></div>
+            <div class="v-text">商家公告</div>
+            <div class="v-line"></div>
+          </div>
+        <div class="v-bulletin">
+          <p class="v-content">{{seller.bulletin}}</p>
+        </div>
         </div>
       </div>
-      <div class="v-detail-close">
+      <div class="v-detail-close" @click="hiddenDetail">
         <i class="icon-close"></i>
       </div>
     </div>
@@ -72,6 +86,9 @@ export default {
   methods: {
     showDatail() {
       this.detailShow = true;
+    },
+    hiddenDetail() {
+      this.detailShow = false;
     }
   },
   components: {
@@ -254,6 +271,15 @@ export default {
     overflow: auto;
     background: rgba(7, 17, 27, 0.8);
 
+    // &.fade-transition {
+    // opacity: 1;
+    // background: rgba(7, 17, 27, 0.8);
+    // }
+
+    // &.fade-enter, &.fade-leave {
+    // opacity: 0;
+    // background: rgba(7, 17, 27, 0);
+    // }
     .v-detail-wrapper {
       width: 100%;
       min-height: 100%;
@@ -291,6 +317,67 @@ export default {
             padding: 0 12px;
             font-weight: 700;
             font-size: 14px;
+          }
+        }
+
+        .v-supports {
+          width: 80%;
+          margin: 0 auto;
+
+          .support-item {
+            padding: 0 12px;
+            margin-bottom: 12px;
+            font-size: 0;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            .icon {
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              vertical-align: top;
+              margin-right: 6px;
+              background-size: 16px 16px;
+              background-repeat: no-repeat;
+
+              &.decrease { // TODO
+                bg-image('./resource/decrease_2');
+              }
+
+              &.discount {
+                bg-image('./resource/discount_2');
+              }
+
+              &.guarantee {
+                bg-image('./resource/guarantee_2');
+              }
+
+              &.invoice {
+                bg-image('./resource/invoice_2');
+              }
+
+              &.special {
+                bg-image('./resource/special_2');
+              }
+            }
+
+            .text {
+              line-height: 16px;
+              font-size: 12px;
+            }
+          }
+        }
+
+        .v-bulletin {
+          width: 80%;
+          margin: 0 auto;
+
+          .v-content {
+            padding: 0 12px;
+            line-height: 24px;
+            font-size: 12px;
           }
         }
       }
