@@ -1,8 +1,6 @@
 ## CSS Sticky Footer
 
 > one way
-
-<code>
     <div v-show="detailShow" class="v-detail">
       <div class="v-detail-wrapper clearfix">
         <div class="v-detail-main">

@@ -1,7 +1,7 @@
 <template>
   <div class="star" :class="starType">
-      <span v-for="itemCLass in itemCLasses" :class="itemCLass"
-      class="star-item" :key="itemCLass"></span>
+      <span v-for="(itemClass, index) in itemClasses" :class="itemClass"
+      class="star-item" :key=index></span>
   </div>
 </template>
 
@@ -46,7 +46,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped rel="stylesheet/stylus">
-import '../../../common/stylus/mixin.styl', .star {
+@import '../../common/stylus/mixin.styl';
+
+.star {
   font-size: 0;
 
   .star-item {
@@ -66,62 +68,66 @@ import '../../../common/stylus/mixin.styl', .star {
       }
 
       &.on {
-        bg-imge('star48_on');
+        bg-image('./resource/star48_on');
       }
 
       &.half {
-        bg-image('star48_half');
+        bg-image('./resource/star48_half');
       }
 
       &.off {
-        bg-image('star48_off');
+        bg-image('./resource/star48_off');
       }
     }
   }
 
   &.star-36 {
-    width: 15px;
-    height: 15px;
-    margin-right: 6px;
-    background-size: 15px 15px;
+    .star-item {
+      width: 15px;
+      height: 15px;
+      margin-right: 6px;
+      background-size: 15px 15px;
 
-    &:last-child {
-      margin-right: 0;
-    }
+      &:last-child {
+        margin-right: 0;
+      }
 
-    &.on {
-      bg-imge('star36_on');
-    }
+      &.on {
+        bg-image('./resource/star36_on');
+      }
 
-    &.half {
-      bg-image('star36_half');
-    }
+      &.half {
+        bg-image('./resource/star36_half');
+      }
 
-    &.off {
-      bg-image('star36_off');
+      &.off {
+        bg-image('./resource/star36_off');
+      }
     }
   }
 
   &.star-24 {
-    width: 10px;
-    height: 10px;
-    margin-right: 3px;
-    background-size: 10px 10px;
+    .star-item {
+      width: 10px;
+      height: 10px;
+      margin-right: 3px;
+      background-size: 10px 10px;
 
-    &:last-child {
-      margin-right: 0;
-    }
+      &:last-child {
+        margin-right: 0;
+      }
 
-    &.on {
-      bg-imge('star24_on');
-    }
+      &.on {
+        bg-image('./resource/star24_on');
+      }
 
-    &.half {
-      bg-image('star24_half');
-    }
+      &.half {
+        bg-image('./resource/star24_half');
+      }
 
-    &.off {
-      bg-image('star24_off');
+      &.off {
+        bg-image('./resource/star24_off');
+      }
     }
   }
 }

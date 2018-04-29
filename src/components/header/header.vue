@@ -33,6 +33,14 @@
       <div class="v-detail-wrapper clearfix">
         <div class="v-detail-main">
           <h1 class="v-name">{{seller.name}}</h1>
+          <div class="v-star-wrapper">
+            <Star :size='48' :score='seller.score'></Star>
+          </div>
+          <div class="v-title">
+            <div class="v-line"></div>
+            <div class="v-text">Discount Info</div>
+            <div class="v-line"></div>
+          </div>
         </div>
       </div>
       <div class="v-detail-close">
@@ -43,7 +51,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import Star from "components/star/star";
+import Star from "../star/star";
 
 export default {
   name: "Header",
@@ -259,6 +267,31 @@ export default {
           text-align: center;
           font-size: 16px;
           font-weight: 700;
+        }
+
+        .v-star-wrapper {
+          margin-top: 18px;
+          padding: 2px 0;
+          text-align: center;
+        }
+
+        .v-title {
+          display: flex;
+          width: 80%;
+          margin: 28px auto 24px auto;
+
+          .v-line {
+            flex: 1;
+            position: relative;
+            top: -6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+          }
+
+          .v-text {
+            padding: 0 12px;
+            font-weight: 700;
+            font-size: 14px;
+          }
         }
       }
     }
